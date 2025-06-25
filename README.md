@@ -1,4 +1,5 @@
 # Flibook
+![main page](https://raw.githubusercontent.com/cladium/flibook/21e3b05a1dbd81fac757f6a7975f9ab17f81cbf1/main.png)
 
 Flibook – локальная электронная библиотека на базе усовершенствованного (изображения, обложки и ревью - отдельно) дампа с INPX-файлом.
 Основной режим использования - веб-интерфейс на Flask (а значит, будет работать с любым браузером и без JavaScript).
