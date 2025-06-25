@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Flibook – Home{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>Flibook</h1>
+  <form class="search-form" method="get" action="{{ url_for('search') }}">
+    <input class="form-control form-control-lg" type="search" name="q" placeholder="Название или автор" autofocus>
+    <button class="btn btn-accent btn-lg" type="submit">Поиск</button>
+  </form>
+</section>
+{% endblock %}

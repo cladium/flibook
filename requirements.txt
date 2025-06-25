@@ -1,0 +1,5 @@
+flask>=2.3
+sqlalchemy>=2.0
+click>=8.1
+pytest>=7.4
+py7zr>=0.20

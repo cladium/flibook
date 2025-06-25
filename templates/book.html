@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}{{ book.title }} – Flibook{% endblock %}
+{% block content %}
+<div class="row g-4 align-items-start book-page-row">
+  <!-- Cover + download: appears after info on mobile, left on desktop -->
+  <div class="col-12 col-md-4 text-center order-2 order-md-1 d-flex flex-column align-items-center">
+    {% if cover_exists %}
+      <img src="{{ url_for('cover', book_id=book.id) }}" alt="cover" class="img-fluid rounded shadow-sm mb-3 book-cover">
+    {% endif %}
+    <a class="btn btn-accent btn-lg d-block mx-auto mt-3" href="{{ url_for('download', book_id=book.id) }}">Получить .fb2</a>
+  </div>
+  {# Info column #}
+  <div class="col-12 col-md-8 order-1 order-md-2">
+    <h2 class="mb-2">{{ book.title }}</h2>
+    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+      <p class="text-muted mb-0">
+        {% for a in book.authors %}
+          {{ a.last_name }}{% if a.first_name %} {{ a.first_name[0] }}.{% endif %}{% if a.middle_name %}{{ a.middle_name[0] }}.{% endif %}{% if not loop.last %}, {% endif %}
+        {%- endfor -%}
+      </p>
+      {% if pub_year %}
+        <span class="badge date-badge">{{ pub_year }}</span>
+      {% endif %}
+    </div>
+    {% if annotation %}
+      <hr class="d-none d-md-block my-3">
+      <h4 class="d-none d-md-block mt-2">Аннотация</h4>
+      <div class="d-none d-md-block">{{ annotation|safe }}</div>
+    {% endif %}
+  </div>
+</div>
+{% if annotation %}
+  <hr class="d-md-none my-4">
+  <h4 class="d-md-none mt-2">Аннотация</h4>
+  <div class="d-md-none">{{ annotation|safe }}</div>
+{% endif %}
+{% endblock %}

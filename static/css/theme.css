@@ -1,0 +1,32 @@
+:root {
+  /* new serene palette */
+  --primary: #4C8C74;         /* calming sage */
+  --primary-dark: #3E6F5B;    /* deeper sage */
+  --accent: var(--primary);   /* use primary for accent buttons */
+  --accent-dark: var(--primary-dark);
+  --accent-light: #F3E9E1;    
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+.btn-accent:hover,
+.btn-accent:focus {
+  background: var(--accent-dark);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Year badge */
+.badge.date-badge {
+  background: var(--accent-light) !important;
+  color: var(--accent-dark) !important;
+  font-size: 0.9rem;
+  padding: 0.4em 0.65em;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
