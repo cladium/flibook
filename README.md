@@ -24,7 +24,7 @@ pip install -r requirements.txt
 ### 1. Создать и заполнить базу книг
 
 ```bash
-python -m flibook.cli build path/to/Flibusta.inpx \
+python -m flibook.cli build path/to/library_index.inpx \
                         --dump-root path/to/fb2_dump
 ```
 
